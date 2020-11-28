@@ -19,6 +19,10 @@ class ContentsController < ApplicationController
     end
   end
 
+  def edit
+    @content = Content.find(params[:id])
+  end
+
   private
 
   def content_params
