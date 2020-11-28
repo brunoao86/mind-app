@@ -1,5 +1,11 @@
 <h1>New Content</h1>
 
+<% if @content.errors.any? %>
+  Errors: <%= @content.errors.full_messages.join(', ') %>
+  <BR>
+  <BR>
+<% end %>
+
 <%= form_with(model: @content, local: true) do |form| %>
   <div class'field'>
     <%= form.label :title %>
