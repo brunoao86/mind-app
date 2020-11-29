@@ -3,13 +3,13 @@
 <h1>Contents</h1>
 
 <%= form_tag(contents_path, method: :get) do %>
-  <div class'field'>
+  <div class='form-group'>
     <%= label_tag :tags %>
-    <%= select_tag 'tags[]', options_for_select(current_user.tags.pluck(:name), params[:tags]), class: 'select2', multiple: 'multiple', style: 'width: 50%' %>
+    <%= select_tag 'tags[]', options_for_select(current_user.tags.pluck(:name), params[:tags]), class: 'select2 form-control', multiple: 'multiple' %>
   </div>
 
   <div class='actions'>
-    <%= submit_tag('Search') %>
+    <%= submit_tag 'Search', class: 'btn btn-primary' %>
   </div>
 <% end %>
 
