@@ -15,3 +15,14 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import $ from 'jquery'
+import 'select2'
+
+$(document).on('turbolinks:load', function() {
+  $(".select2").select2({
+    tags: true,
+    tokenSeparators: [',', ' ']
+  })
+});
+
