@@ -3,10 +3,11 @@
 <h1>Contents</h1>
 
 <% @contents.each do |content| %>
-  Title: <%= content.title %>
-  Description: <%= content.description %>
   <%= link_to 'Show', content_path(content) %>
   <%= link_to 'Edit', edit_content_path(content) %>
   <%= link_to 'Destroy', content_path(content), method: :delete, data: { confirm: 'Are you sure?' }  %>
+  <strong>Title</strong>: <%= content.title %>
+  <strong>Description</strong>: <%= content.description %>
+  <strong>Tags</strong>: <%= content.tags.pluck(:name).join(', ') %>
   <BR>
 <% end %>
